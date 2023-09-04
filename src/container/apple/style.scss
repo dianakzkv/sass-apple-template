@@ -1,0 +1,101 @@
+@use '../../lib/service.scss' as s;
+
+.header {
+	@extend .section;
+	background-color: s.color('backgroundDark');
+}
+
+.header__content {
+	@extend .section__content;
+
+	display: flex;
+	justify-content: space-between;
+	padding: s.space(4);
+}
+
+.header__block {
+	display: flex;
+	gap: s.space(8);
+	align-items: center;
+}
+
+.header__icon {
+	@include s.click;
+}
+
+.header__link {
+	color: s.color('whiteLight');
+	font-size: s.size('small');
+
+	@include s.click;
+}
+
+.product {
+	@extend .section;
+
+	padding-top: s.space(20);
+	padding-bottom: s.space(20);
+
+	background-repeat: no-repeat;
+	background-position: bottom center;
+}
+
+.product__content {
+	display: grid;
+	gap: s.space(5);
+	text-align: center;
+	align-content: center;
+}
+
+.product__title {
+	font-size: 56px;
+	font-weight: 600;
+}
+
+.product__description {
+	font-size: 28px;
+}
+
+.product__action {
+	display: flex;
+	align-items: center;
+	gap: s.space(5);
+	justify-content: center;
+
+	@include s.click;
+}
+
+.product__link {
+	@include s.linkAction;
+}
+
+.product-big {
+	max-height: 700px;
+	height: 100vh;
+
+	background-size: cover;
+
+	@media all and (width < s.screen('tablet')) {
+		background-size: 150%;
+
+		max-height: 500px;
+	}
+}
+
+.product--iphone-pro {
+	background-image: url('/img/iphone-pro.png');
+}
+
+.product--dark {
+	.product__title, .product__description {
+		color: s.color('background');
+	}
+
+	background-color: #000;
+}
+
+.product--top {
+	.product__content {
+		align-content: flex-start;
+	}
+}
