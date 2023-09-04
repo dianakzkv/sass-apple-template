@@ -24,3 +24,12 @@ $contentSizeMap: (
 		}
 	}
 }
+
+.section__double {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	@media all and (width < var.screen('laptop')) {
+		grid-template-columns: 1fr;
+	}
+}
