@@ -1,0 +1,38 @@
+@use './space.scss' as s;
+@use './var.scss' as var;
+
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	align-items: flex-start;
+	gap: s.space(5);
+	padding: s.space(10) calc(50% - 1200px/2);
+
+	flex-wrap: wrap;
+
+	.footer__column {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: s.space(4);
+		min-width: 100px;
+
+		.footer__title {
+			color: var.color('fontDark');
+			font-size: var.size('small');
+			font-weight: 600;
+			margin: 0;
+		}
+	
+		.footer__link {
+			text-decoration: none;
+			color: #424245;
+			font-size: 12px;
+			font-weight: 400;
+		}
+		
+	}
+}
+
